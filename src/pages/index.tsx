@@ -20,10 +20,24 @@ interface HomeProps {
 
 export default function Home({ products }: HomeProps) {
   const [sliderRef] = useKeenSlider({
+    breakpoints: {
+      "(min-width: 520px)": {
+        slides: {
+          perView: 2,
+          spacing: 48,
+        }
+      },
+      "(min-width: 1200px)": {
+        slides: {
+          perView: 3,
+          spacing: 48,
+        }
+      },
+    },
     slides: {
-      perView: 3,
-      spacing: 48
-    }
+      perView: 1,
+      spacing: 10,
+    },
   });
 
   return (

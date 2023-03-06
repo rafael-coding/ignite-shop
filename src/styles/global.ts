@@ -9,11 +9,18 @@ export const globalStyles = globalCss({
   body: {
     '-webkit-font-smoothing': 'antialiased',
     backgroundColor: '$gray900',
-    color: '$gray100'
+    color: '$gray100',
+    padding: '0 15px',
+    
+    '@bp2': {
+      padding: 0,
+    }
   },
 
   'body, input, textarea, button': {
     fontFamily: 'Roboto',
     fontWeight: 400
   }
+
+  
 })

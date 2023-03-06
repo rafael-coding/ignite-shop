@@ -1,38 +1,49 @@
 import { styled } from "..";
 
 export const ProductContainer = styled('main', {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    alignItems: 'stretch',
-    gap: '4rem',
+    '@bp1':{
+        maxWidth: 576,
+    },
 
-    maxWidth: 1180,
-    margin: '0 auto',
+    '@bp2': {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        alignItems: 'stretch',
+        gap: '4rem',
+    
+        maxWidth: 1180,
+        margin: '0 auto',
+    }
 })
 
-export const ImageContainer = styled('main', {
+export const ImageContainer = styled('div', {
     width: '100%',
     maxWidth: 576,
     height: 'calc(656px - 0.5rem)',
     background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
     borderRadius: 8,
-    padding: '0.25rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
 
     img: {
         objectFit: 'cover',
+        width: '100%',
     }
 })
 
-export const ProductDetails = styled('main', {
+export const ProductDetails = styled('div', {
     display: 'flex',
     flexDirection: 'column',
 
     h1: {
         fontSize: '$2xl',
         color: '$gray300',
+        marginTop: '1rem',
+
+        '@bp2': {
+            marginTop: 0,
+        }
     },
 
     span: {
@@ -50,7 +61,8 @@ export const ProductDetails = styled('main', {
     },
 
     button: {
-        marginTop: 'auto',
+
+        margin: '2.5rem 0',
         backgroundColor: '$green500',
         border: 0,
         color: '$white',
@@ -67,6 +79,10 @@ export const ProductDetails = styled('main', {
 
         '&:not(:disabled):hover': {
             backgroundColor: '$green300',
+        },
+
+        '@bp2': {
+            margin: 'auto 0 0 0',
         }
     }
 })
